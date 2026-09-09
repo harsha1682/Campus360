@@ -1,0 +1,3 @@
+const toggleBtns=document.querySelectorAll('.toggle-btn');toggleBtns.forEach(btn=>{btn.addEventListener('click',function(){const parent=this.parentElement;const allBtns=parent.querySelectorAll('.toggle-btn');allBtns.forEach(b=>{b.classList.remove('present','absent')});this.classList.add(this.dataset.status)})});
+document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();alert('Booking request submitted! You will receive confirmation via email.');this.reset();});
+document.querySelector('.btn-submit').addEventListener('click',function(){if(this.textContent==='Submit Attendance'){alert('Attendance submitted successfully!')}});

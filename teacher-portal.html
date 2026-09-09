@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JNTUH Teacher Portal | Faculty Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/teacher-portal.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-glyph"></div>
+    <div class="brand-text"><div class="main">JNTUH</div><div class="sub">TEACHER PORTAL</div></div>
+  </div>
+  <div class="teacher-info">
+    <div>
+      <div class="name">Dr. Anitha Rao</div>
+      <div class="dept">Computer Science & Engineering</div>
+    </div>
+    <div class="portal-badge">👨‍🏫 Faculty</div>
+  </div>
+</header>
+
+<main class="main-wrapper">
+<div class="page-header">
+  <h1>Faculty Dashboard</h1>
+  <div class="date">Tuesday, September 8, 2026</div>
+</div>
+
+<div class="quick-actions">
+  <div class="action-card"><div class="icon">📝</div><div class="label">Mark Attendance</div></div>
+  <div class="action-card"><div class="icon">📅</div><div class="label">My Schedule</div></div>
+  <div class="action-card"><div class="icon">🏛️</div><div class="label">Book Hall/Lab</div></div>
+  <div class="action-card"><div class="icon">📢</div><div class="label">Notices</div></div>
+  <div class="action-card"><div class="icon">📊</div><div class="label">Analytics</div></div>
+</div>
+
+<section class="section">
+  <div class="section-header"><h3>📝 Mark Attendance</h3></div>
+  <div class="attendance-controls">
+    <select id="subjectSelect">
+      <option value="">Select Subject</option>
+      <option value="ds">Data Structures (CSE-A)</option>
+      <option value="os">Operating Systems (CSE-B)</option>
+      <option value="dbms">DBMS (CSE-A)</option>
+      <option value="cn">Computer Networks (CSE-B)</option>
+    </select>
+    <select id="dateSelect">
+      <option value="2026-09-08">Today - Sep 8, 2026</option>
+      <option value="2026-09-07">Yesterday - Sep 7, 2026</option>
+      <option value="2026-09-06">Sep 6, 2026</option>
+    </select>
+  </div>
+  <table class="student-list">
+    <thead>
+      <tr><th>ROLL NO</th><th>STUDENT NAME</th><th>ATTENDANCE</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="student-roll">21241A0501</div></td>
+        <td><div class="student-name">Aditya Kumar</div></td>
+        <td><div class="attendance-toggle"><button class="toggle-btn present" data-status="present">Present</button><button class="toggle-btn" data-status="absent">Absent</button></div></td>
+      </tr>
+      <tr>
+        <td><div class="student-roll">21241A0502</div></td>
+        <td><div class="student-name">Keerthana Chillara</div></td>
+        <td><div class="attendance-toggle"><button class="toggle-btn present" data-status="present">Present</button><button class="toggle-btn" data-status="absent">Absent</button></div></td>
+      </tr>
+      <tr>
+        <td><div class="student-roll">21241A0503</div></td>
+        <td><div class="student-name">Priya Sharma</div></td>
+        <td><div class="attendance-toggle"><button class="toggle-btn present" data-status="present">Present</button><button class="toggle-btn" data-status="absent">Absent</button></div></td>
+      </tr>
+      <tr>
+        <td><div class="student-roll">21241A0504</div></td>
+        <td><div class="student-name">Rahul Verma</div></td>
+        <td><div class="attendance-toggle"><button class="toggle-btn present" data-status="present">Present</button><button class="toggle-btn" data-status="absent">Absent</button></div></td>
+      </tr>
+      <tr>
+        <td><div class="student-roll">21241A0505</div></td>
+        <td><div class="student-name">Sneha Patel</div></td>
+        <td><div class="attendance-toggle"><button class="toggle-btn present" data-status="present">Present</button><button class="toggle-btn" data-status="absent">Absent</button></div></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn-submit">Submit Attendance</button>
+</section>
+
+<section class="section">
+  <div class="section-header"><h3>📅 Today's Schedule</h3></div>
+  <div class="schedule-grid">
+    <div class="schedule-card">
+      <div class="time">9:00 AM - 10:00 AM</div>
+      <div class="subject">Data Structures</div>
+      <div class="details">CSE-A · Room 301</div>
+    </div>
+    <div class="schedule-card">
+      <div class="time">10:00 AM - 11:00 AM</div>
+      <div class="subject">DS Lab</div>
+      <div class="details">CSE-A · Lab 1</div>
+    </div>
+    <div class="schedule-card">
+      <div class="time">1:00 PM - 2:00 PM</div>
+      <div class="subject">Operating Systems</div>
+      <div class="details">CSE-B · Room 205</div>
+    </div>
+    <div class="schedule-card">
+      <div class="time">3:00 PM - 4:00 PM</div>
+      <div class="subject">Faculty Meeting</div>
+      <div class="details">CSE Seminar Hall</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header"><h3>🏛️ Hall/Lab Reservation</h3></div>
+  <form class="booking-form" id="bookingForm">
+    <div class="form-group">
+      <label for="hallType">Hall/Lab Type</label>
+      <select id="hallType" required>
+        <option value="">Select type</option>
+        <option value="seminar">Seminar Hall</option>
+        <option value="lab">Computer Lab</option>
+        <option value="auditorium">Auditorium</option>
+        <option value="classroom">Classroom</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="bookingDate">Date</label>
+      <input type="date" id="bookingDate" required>
+    </div>
+    <div class="form-group">
+      <label for="bookingTime">Time Slot</label>
+      <select id="bookingTime" required>
+        <option value="">Select slot</option>
+        <option value="9-11">9:00 AM - 11:00 AM</option>
+        <option value="11-1">11:00 AM - 1:00 PM</option>
+        <option value="2-4">2:00 PM - 4:00 PM</option>
+        <option value="4-6">4:00 PM - 6:00 PM</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="purpose">Purpose</label>
+      <input type="text" id="purpose" placeholder="e.g., Lab session, Guest lecture" required>
+    </div>
+    <div class="form-group" style="grid-column:1/-1;">
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" placeholder="Any special requirements..."></textarea>
+    </div>
+    <button type="submit" class="btn-submit" style="grid-column:1/-1;">Request Booking</button>
+  </form>
+  <div class="hall-list">
+    <h4 style="margin-bottom:16px;font-size:16px;">Available Halls & Labs</h4>
+    <div class="hall-item">
+      <div class="hall-info">
+        <h4>CSE Seminar Hall</h4>
+        <p>Capacity: 120 · Projector, Sound System</p>
+      </div>
+      <div class="hall-status available">✓ Available Today</div>
+    </div>
+    <div class="hall-item">
+      <div class="hall-info">
+        <h4>Computer Lab 1</h4>
+        <p>Capacity: 60 · 60 PCs, High-speed Internet</p>
+      </div>
+      <div class="hall-status booked">✗ Booked (9-11 AM)</div>
+    </div>
+    <div class="hall-item">
+      <div class="hall-info">
+        <h4>Auditorium</h4>
+        <p>Capacity: 500 · Stage, AC, Advanced AV</p>
+      </div>
+      <div class="hall-status available">✓ Available Today</div>
+    </div>
+    <div class="hall-item">
+      <div class="hall-info">
+        <h4>Classroom 301</h4>
+        <p>Capacity: 80 · Smart Board, AC</p>
+      </div>
+      <div class="hall-status available">✓ Available Today</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header"><h3>📢 Notices & Circulars</h3></div>
+  <div class="notice-list">
+    <article class="notice-item">
+      <div class="notice-date">SEPTEMBER 5, 2026</div>
+      <h4 class="notice-title">Mid-Term Examination Schedule</h4>
+      <div class="notice-content">Mid-term examinations for B.Tech III Year will be conducted from September 25 to October 5, 2026. Faculty are requested to complete syllabus coverage by September 20.</div>
+    </article>
+    <article class="notice-item">
+      <div class="notice-date">SEPTEMBER 2, 2026</div>
+      <h4 class="notice-title">Internal Marks Submission Deadline</h4>
+      <div class="notice-content">All faculty members must submit internal assessment marks for Semester V by September 15, 2026. Late submissions will not be accepted.</div>
+    </article>
+    <article class="notice-item">
+      <div class="notice-date">AUGUST 28, 2026</div>
+      <h4 class="notice-title">Faculty Development Program</h4>
+      <div class="notice-content">A 3-day FDP on "AI in Education" will be held from September 18-20. Interested faculty may register with the HOD by September 10.</div>
+    </article>
+    <article class="notice-item">
+      <div class="notice-date">AUGUST 25, 2026</div>
+      <h4 class="notice-title">Srishti Cultural Fest - Faculty Coordinators</h4>
+      <div class="notice-content">Faculty coordinators for Srishti 2026 are requested to attend a meeting on September 10 at 3 PM in the Auditorium to discuss event planning.</div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header"><h3>📊 My Analytics</h3></div>
+  <div class="analytics-grid">
+    <div class="analytics-card"><div class="number">156</div><div class="label">Total Students</div></div>
+    <div class="analytics-card"><div class="number">78%</div><div class="label">Avg Attendance</div></div>
+    <div class="analytics-card"><div class="number">4</div><div class="label">Classes Today</div></div>
+    <div class="analytics-card"><div class="number">12</div><div class="label">Labs Conducted</div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  JNTUH Campus Explorer — Teacher Portal | Logged in as Dr. Anitha Rao (CSE Department)
+</footer>
+</main>
+
+<script src="js/teacher-portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      JNTUH Campus Explorer | Jawaharlal Nehru Technological University
+      Hyderabad
+    </title>
+    <meta
+      name="description"
+      content="Explore JNTUH's 89-acre Kukatpally campus with interactive maps, placement stats, department info, clubs, and student resources."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/jntuh.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="topbar" role="banner">
+      <a class="mark" href="#login" aria-label="JNTUH Campus Explorer — Dashboard">
+        <div class="mark-glyph" aria-hidden="true"></div>
+        <div class="mark-text">
+          <div class="full">JNTUH</div>
+          <div class="sub">CAMPUS EXPLORER</div>
+        </div>
+      </a>
+      <nav class="topnav" role="navigation" aria-label="Main navigation">
+        <a href="#login">Dashboard</a>
+        <a href="#explore">Explore</a>
+        <a href="#placements">Placements</a>
+        <a href="#news">News</a>
+        <a href="#departments">Departments</a>
+        <a href="#canteen">Canteen</a>
+        <a href="#clubs">Clubs</a>
+        <a href="#help-desk">Help Desk</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="role-switcher">
+        <button
+          class="role-btn-small"
+          aria-expanded="false"
+          aria-haspopup="true"
+          id="roleToggle"
+        >
+          <span>Guest</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+            <path d="M1 3l4 4 4-4H1z" />
+          </svg>
+        </button>
+        <div
+          class="role-dropdown"
+          role="menu"
+          aria-labelledby="roleToggle"
+          id="roleDropdown"
+        >
+          <a role="menuitem" href="#login">Guest</a>
+          <a role="menuitem" href="student-portal.html">Student</a>
+          <a role="menuitem" href="teacher-portal.html">Teacher</a>
+          <a role="menuitem" href="principal-portal.html">Principal</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content"><section class="hero" id="login" aria-labelledby="hero-heading">
+        <div class="hero-left">
+          <div class="hero-eyebrow-row">
+            <div class="rule" aria-hidden="true"></div>
+            <span>Kukatpally, Hyderabad — 89 acres</span>
+          </div>
+          <h1 class="hero-title" id="hero-heading">
+            Explore your<br /><span class="accent">campus</span>, like<br />never
+            before.
+          </h1>
+          <p class="hero-tagline">
+            One map, one login, every department, club and deadline JNTUH has to
+            offer — built for the students, faculty and visitors who walk this
+            campus every day.
+          </p>
+          <div class="hero-stats">
+            <div><strong>89</strong><span>ACRE CAMPUS</span></div>
+            <div><strong>12</strong><span>DEPARTMENTS</span></div>
+            <div><strong>24</strong><span>CLUBS &amp; FESTS</span></div>
+            <div><strong>65%</strong><span>PLACEMENT RATE</span></div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="panel-head">
+            <h2>Select your role</h2>
+            <p>Choose how you'd like to enter the campus.</p>
+          </div>
+          <div class="role-list" role="list">
+            <a
+              href="student-portal.html"
+              class="role-btn"
+              role="listitem"
+              aria-label="Enter as Student"
+            >
+              <span>
+                <span class="name">As Student</span>
+                <span class="desc"
+                  >Attendance, timetable, results and the help desk</span
+                >
+              </span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a
+              href="teacher-portal.html"
+              class="role-btn"
+              role="listitem"
+              aria-label="Enter as Teacher"
+            >
+              <span>
+                <span class="name">As Teacher / Admin</span>
+                <span class="desc"
+                  >Mark attendance, book halls, manage notices</span
+                >
+              </span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a
+              href="principal-portal.html"
+              class="role-btn principal"
+              role="listitem"
+              aria-label="Enter as Principal (Admin only)"
+            >
+              <span>
+                <span class="name">As Principal</span>
+                <span class="desc"
+                  >Restricted — administrator credentials required</span
+                >
+              </span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="panel-foot">
+            <span>Need help signing in?</span>
+            <button aria-label="Open settings" id="heroSettingsBtn">
+              <span class="gear" aria-hidden="true"></span>Settings
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="explore" aria-labelledby="explore-heading">
+        <div class="section-head">
+          <div>
+            <div class="kicker">The campus map</div>
+            <h2 id="explore-heading">Find your way around</h2>
+          </div>
+          <p>
+            Every building, department and facility, searchable by name or
+            category — with accessibility routes marked.
+          </p>
+        </div>
+
+        <div class="explore-grid">
+          <div
+            class="map-card"
+            role="region"
+            aria-label="Interactive campus map"
+          >
+            <div class="search-bar">
+              <input
+                type="search"
+                class="search-input"
+                placeholder="Search buildings, departments..."
+                aria-label="Search buildings"
+              />
+            </div>
+            <div class="map-controls">
+              <button class="map-btn" aria-label="Recenter map">
+                Recenter
+              </button>
+              <button class="map-btn" aria-label="Toggle accessibility overlay">
+                ♿ Access
+              </button>
+            </div>
+            <div
+              class="map-pin"
+              style="top: 22%; left: 34%"
+              data-building="admin"
+              tabindex="0"
+              role="button"
+              aria-label="Admin Block"
+            ></div>
+            <div
+              class="map-pin"
+              style="top: 48%; left: 62%"
+              data-building="cse"
+              tabindex="0"
+              role="button"
+              aria-label="CSE Department"
+            ></div>
+            <div
+              class="map-pin"
+              style="top: 68%; left: 28%"
+              data-building="library"
+              tabindex="0"
+              role="button"
+              aria-label="Central Library"
+            ></div>
+            <div
+              class="map-pin"
+              style="top: 38%; left: 78%"
+              data-building="auditorium"
+              tabindex="0"
+              role="button"
+              aria-label="Auditorium"
+            ></div>
+            <div
+              class="map-pin"
+              style="top: 55%; left: 45%"
+              data-building="ece"
+              tabindex="0"
+              role="button"
+              aria-label="ECE Department"
+            ></div>
+            <div
+              class="map-pin"
+              style="top: 72%; left: 52%"
+              data-building="canteen"
+              tabindex="0"
+              role="button"
+              aria-label="Canteen"
+            ></div>
+            <div
+              class="map-pin"
+              style="top: 28%; left: 58%"
+              data-building="sports"
+              tabindex="0"
+              role="button"
+              aria-label="Sports Complex"
+            ></div>
+            <h3>Interactive satellite map</h3>
+            <p>
+              Click any building — Admin Block, CSE, ECE, Library, Auditorium —
+              for hours, HOD and services.
+            </p>
+            <div class="map-tags">
+              <span>Academic</span>
+              <span>Admin</span>
+              <span>Facilities</span>
+              <span>♿ Wheelchair access</span>
+            </div>
+          </div>
+
+          <div class="list-card" role="list" aria-label="Building directory">
+            <div class="list-row" role="listitem" tabindex="0">
+              <div>
+                <h4>Department of CSE</h4>
+                <div class="meta">Block C · Dr. Anitha Rao, HOD</div>
+              </div>
+              <div class="count">
+                42 faculty
+                <span
+                  class="accessibility-icon"
+                  aria-label="Wheelchair accessible"
+                  >✅</span
+                >
+              </div>
+            </div>
+            <div class="list-row" role="listitem" tabindex="0">
+              <div>
+                <h4>Central Library</h4>
+                <div class="meta">Open 8 AM – 8 PM · Wi-Fi</div>
+              </div>
+              <div class="count">
+                ✓ Access
+                <span
+                  class="accessibility-icon"
+                  aria-label="Wheelchair accessible"
+                  >✅</span
+                >
+              </div>
+            </div>
+            <div class="list-row" role="listitem" tabindex="0">
+              <div>
+                <h4>Sports Complex</h4>
+                <div class="meta">Athletics, courts, gym</div>
+              </div>
+              <div class="count">
+                ✓ Access
+                <span
+                  class="accessibility-icon"
+                  aria-label="Wheelchair accessible"
+                  >✅</span
+                >
+              </div>
+            </div>
+            <div class="list-row" role="listitem" tabindex="0">
+              <div>
+                <h4>Admin Block</h4>
+                <div class="meta">Admissions, Exams, Administration</div>
+              </div>
+              <div class="count">
+                ✓ Access
+                <span
+                  class="accessibility-icon"
+                  aria-label="Wheelchair accessible"
+                  >✅</span
+                >
+              </div>
+            </div>
+            <div class="list-row" role="listitem" tabindex="0">
+              <div>
+                <h4>Auditorium</h4>
+                <div class="meta">Events, seminars, cultural programs</div>
+              </div>
+              <div class="count">
+                ✓ Access
+                <span
+                  class="accessibility-icon"
+                  aria-label="Wheelchair accessible"
+                  >✅</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="placements"
+        aria-labelledby="placements-heading"
+      >
+        <div class="section-head">
+          <div>
+            <div class="kicker">Class of 2025–26</div>
+            <h2 id="placements-heading">Placement outcomes</h2>
+          </div>
+          <p>
+            Branch-wise offers, package ranges and this year's top recruiting
+            companies.
+          </p>
+        </div>
+
+        <div class="stat-row" role="list" aria-label="Placement statistics">
+          <div class="stat-cell" role="listitem">
+            <div class="num">65%</div>
+            <div class="lbl">STUDENTS PLACED</div>
+          </div>
+          <div class="stat-cell" role="listitem">
+            <div class="num">₹9.4L</div>
+            <div class="lbl">AVERAGE PACKAGE</div>
+          </div>
+          <div class="stat-cell" role="listitem">
+            <div class="num">₹6.94L</div>
+            <div class="lbl">MEDIAN PACKAGE</div>
+          </div>
+          <div class="stat-cell" role="listitem">
+            <div class="num">₹30L</div>
+            <div class="lbl">TOP PACKAGE (CSE)</div>
+          </div>
+        </div>
+
+        <div class="branch-bars" aria-label="Branch-wise placement percentages">
+          <div class="bar-row">
+            <div class="branch">CSE</div>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                style="width: 95%"
+                role="progressbar"
+                aria-valuenow="95"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="pct">95%</div>
+          </div>
+          <div class="bar-row">
+            <div class="branch">ECE</div>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                style="width: 60%"
+                role="progressbar"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="pct">60%</div>
+          </div>
+          <div class="bar-row">
+            <div class="branch">AI &amp; ML</div>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                style="width: 90%"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="pct">90%</div>
+          </div>
+          <div class="bar-row">
+            <div class="branch">Mechanical</div>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                style="width: 55%"
+                role="progressbar"
+                aria-valuenow="55"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="pct">55%</div>
+          </div>
+          <div class="bar-row">
+            <div class="branch">Civil</div>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                style="width: 33%"
+                role="progressbar"
+                aria-valuenow="33"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="pct">33%</div>
+          </div>
+          <div class="bar-row">
+            <div class="branch">EEE</div>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                style="width: 44%"
+                role="progressbar"
+                aria-valuenow="44"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <div class="pct">44%</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="news" aria-labelledby="news-heading">
+        <div class="section-head">
+          <div>
+            <div class="kicker">From around campus</div>
+            <h2 id="news-heading">Latest news</h2>
+          </div>
+          <p>Announcements, results and events, updated as they happen.</p>
+        </div>
+
+        <div class="news-grid" role="list" aria-label="Campus news">
+          <div class="news-card" role="listitem">
+            <div class="date">SEPTEMBER 2, 2026</div>
+            <h4>New AI Lab inaugurated</h4>
+            <p>
+              The Department of CSE opened a dedicated AI &amp; ML research lab,
+              funded jointly with three industry partners.
+            </p>
+            <div class="read">Read more</div>
+          </div>
+          <div class="news-card" role="listitem">
+            <div class="date">AUGUST 28, 2026</div>
+            <h4>Sports meet results announced</h4>
+            <p>
+              ECE takes the overall trophy at this year's annual sports meet,
+              with CSE and Mech close behind.
+            </p>
+            <div class="read">Read more</div>
+          </div>
+          <div class="news-card" role="listitem">
+            <div class="date">AUGUST 20, 2026</div>
+            <h4>Eraya dates confirmed for October</h4>
+            <p>
+              The technical fest returns with hackathons, robotics challenges
+              and a guest lecture series.
+            </p>
+            <div class="read">Read more</div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="departments"
+        aria-labelledby="departments-heading"
+      >
+        <div class="section-head">
+          <div>
+            <div class="kicker">Academic excellence</div>
+            <h2 id="departments-heading">Departments</h2>
+          </div>
+          <p>
+            Explore our 12 departments, each led by experienced faculty with
+            state-of-the-art labs and research facilities.
+          </p>
+        </div>
+
+        <div class="dept-grid" role="list" aria-label="Department directory">
+          <div class="dept-card" role="listitem">
+            <h4>Computer Science &amp; Engineering</h4>
+            <div class="hod">Dr. Anitha Rao, HOD</div>
+            <div class="details">
+              42 faculty members · AI/ML, Data Science, Cyber Security · 8
+              research labs
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Electronics &amp; Communication</h4>
+            <div class="hod">Dr. Suresh Kumar, HOD</div>
+            <div class="details">
+              38 faculty · VLSI, Embedded Systems, Communications · Advanced
+              labs
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Electrical &amp; Electronics</h4>
+            <div class="hod">Dr. M. Reddy, HOD</div>
+            <div class="details">
+              28 faculty · Power Systems, Control Systems, Renewable Energy
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Mechanical Engineering</h4>
+            <div class="hod">Dr. K. Venkat, HOD</div>
+            <div class="details">
+              35 faculty · CAD/CAM, Thermal, Manufacturing · Workshop facilities
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Civil Engineering</h4>
+            <div class="hod">Dr. P. Sharma, HOD</div>
+            <div class="details">
+              26 faculty · Structural, Geotechnical, Transportation Engineering
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Information Technology</h4>
+            <div class="hod">Dr. R. Prasad, HOD</div>
+            <div class="details">
+              32 faculty · Cloud Computing, IoT, Blockchain · Innovation lab
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Chemical Engineering</h4>
+            <div class="hod">Dr. L. Narayana, HOD</div>
+            <div class="details">
+              22 faculty · Process Engineering, Petrochemicals, Biotechnology
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+          <div class="dept-card" role="listitem">
+            <h4>Biomedical Engineering</h4>
+            <div class="hod">Dr. S. Lakshmi, HOD</div>
+            <div class="details">
+              18 faculty · Medical Devices, Biomaterials, Imaging Technology
+            </div>
+            <a href="#explore" class="btn">Visit Department Page</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="canteen" aria-labelledby="canteen-heading">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Daily specials</div>
+            <h2 id="canteen-heading">Canteen Menu</h2>
+          </div>
+          <p>This week's special dishes at the campus canteen.</p>
+        </div>
+
+        <div
+          class="canteen-week"
+          role="list"
+          aria-label="Weekly canteen specials"
+        >
+          <div class="canteen-day" role="listitem">
+            <div class="day">MONDAY</div>
+            <div class="dish">Veg Biryani</div>
+          </div>
+          <div class="canteen-day" role="listitem">
+            <div class="day">TUESDAY</div>
+            <div class="dish">Chicken Sandwich</div>
+          </div>
+          <div class="canteen-day" role="listitem">
+            <div class="day">WEDNESDAY</div>
+            <div class="dish">Paneer Curry + Rice</div>
+          </div>
+          <div class="canteen-day" role="listitem">
+            <div class="day">THURSDAY</div>
+            <div class="dish">Veg Pulao</div>
+          </div>
+          <div class="canteen-day" role="listitem">
+            <div class="day">FRIDAY</div>
+            <div class="dish">Egg Fried Rice</div>
+          </div>
+          <div class="canteen-day" role="listitem">
+            <div class="day">SATURDAY</div>
+            <div class="dish">Masala Dosa</div>
+          </div>
+          <div class="canteen-day" role="listitem">
+            <div class="day">SUNDAY</div>
+            <div class="dish">Special Thali</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="clubs" aria-labelledby="clubs-heading">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Beyond academics</div>
+            <h2 id="clubs-heading">Clubs &amp; Fests</h2>
+          </div>
+          <p>
+            Join 24+ student clubs and participate in flagship annual fests that
+            define campus life.
+          </p>
+        </div>
+
+        <h3 style="font-size: 20px; margin-bottom: 16px">Student Clubs</h3>
+        <div class="clubs-grid" role="list" aria-label="Student clubs">
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">💻</div>
+            <h4>Coding Club</h4>
+            <p>Competitive programming, hackathons, tech talks</p>
+            <div class="schedule">Every Saturday, 3 PM · CSE Seminar Hall</div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">🤖</div>
+            <h4>Robotics Club</h4>
+            <p>Build bots, participate in competitions, innovate</p>
+            <div class="schedule">Wednesdays, 4 PM · Robotics Lab</div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">📚</div>
+            <h4>Literary Club</h4>
+            <p>Debates, quizzes, poetry, book discussions</p>
+            <div class="schedule">Fridays, 5 PM · Library Hall</div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">🎭</div>
+            <h4>Drama &amp; Dance</h4>
+            <p>Theatre performances, dance competitions</p>
+            <div class="schedule">
+              Tuesdays &amp; Thursdays, 6 PM · Auditorium
+            </div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">🎵</div>
+            <h4>Music Club</h4>
+            <p>Instrumental, vocal, band practice sessions</p>
+            <div class="schedule">Mondays, 5 PM · Music Room</div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">📸</div>
+            <h4>Photography Club</h4>
+            <p>Photo walks, exhibitions, editing workshops</p>
+            <div class="schedule">Sundays, 10 AM · Open Campus</div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">🌱</div>
+            <h4>NSS</h4>
+            <p>Community service, social outreach programs</p>
+            <div class="schedule">Monthly camps · Various locations</div>
+          </div>
+          <div class="club-card" role="listitem">
+            <div class="club-icon" aria-hidden="true">🎖️</div>
+            <h4>NCC</h4>
+            <p>Leadership training, discipline, adventure activities</p>
+            <div class="schedule">Saturdays, 7 AM · Parade Ground</div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; margin: 40px 0 16px">Flagship Fests</h3>
+        <div class="news-grid" role="list" aria-label="Annual fests">
+          <div class="news-card" role="listitem">
+            <div class="date">MARCH 2026</div>
+            <h4>Srishti — Cultural Fest</h4>
+            <p>
+              Annual cultural extravaganza with dance, music, drama, fashion
+              shows and celebrity performances.
+            </p>
+            <div class="read">View highlights</div>
+          </div>
+          <div class="news-card" role="listitem">
+            <div class="date">OCTOBER 2026</div>
+            <h4>Eraya — Technical Fest</h4>
+            <p>
+              Hackathons, robotics challenges, paper presentations, guest
+              lectures from industry experts.
+            </p>
+            <div class="read">View highlights</div>
+          </div>
+          <div class="news-card" role="listitem">
+            <div class="date">AUGUST 2026</div>
+            <h4>Freshers' Day</h4>
+            <p>
+              Welcome celebration for first-year students with performances,
+              games and orientation.
+            </p>
+            <div class="read">View highlights</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="help-desk" aria-labelledby="help-heading">
+        <div class="section-head">
+          <div>
+            <div class="kicker">We're here to help</div>
+            <h2 id="help-heading">Help Desk</h2>
+          </div>
+          <p>
+            Run into an issue on campus? Log it here and the right team
+            will follow up — no login required.
+          </p>
+        </div>
+
+        <div class="ticket-form" aria-label="Submit help desk ticket">
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="it">IT / Lab Issue</option>
+              <option value="maintenance">Maintenance</option>
+              <option value="admin">Administrative</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe your issue in detail..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Ticket</button>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="contact"
+        aria-labelledby="contact-heading"
+      >
+        <div class="section-head">
+          <div>
+            <div class="kicker">Get in touch</div>
+            <h2 id="contact-heading">Contact</h2>
+          </div>
+          <p>
+            Reach the admissions office directly, or get in touch with your
+            branch's class representative below.
+          </p>
+        </div>
+
+        <div
+          style="
+            background: var(--cream);
+            border: 1px solid var(--line);
+            padding: 30px;
+            max-width: 600px;
+          "
+        >
+          <h3 style="font-size: 20px; margin-bottom: 20px">Admission Office</h3>
+          <div style="margin-bottom: 16px">
+            <strong style="color: var(--wine)">Admission Officer:</strong><br />
+            Dr. Rajesh Kumar
+          </div>
+          <div style="margin-bottom: 16px">
+            <strong style="color: var(--wine)">Phone:</strong><br />
+            +91 40 2315 4567
+          </div>
+          <div style="margin-bottom: 16px">
+            <strong style="color: var(--wine)">Email:</strong><br />
+            admissions@jntuh.ac.in
+          </div>
+          <div style="margin-bottom: 16px">
+            <strong style="color: var(--wine)">Office Hours:</strong><br />
+            Monday – Friday, 9:30 AM – 4:30 PM
+          </div>
+          <div>
+            <strong style="color: var(--wine)">Address:</strong><br />
+            Jawaharlal Nehru Technological University Hyderabad<br />
+            Kukatpally, Hyderabad, Telangana 500085
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-inner">
+        <div class="mark">
+          <div class="mark-glyph" aria-hidden="true"></div>
+          <div class="mark-text">
+            <div class="full">JNTUH</div>
+            <div class="sub">CAMPUS EXPLORER</div>
+          </div>
+        </div>
+        <nav class="foot-links" aria-label="Footer navigation">
+          <a href="#login">Dashboard</a>
+          <a href="#explore">Explore</a>
+          <a href="#placements">Placements</a>
+          <a href="#news">News</a>
+          <a href="#departments">Departments</a>
+          <a href="#canteen">Canteen</a>
+          <a href="#clubs">Clubs</a>
+          <a href="#help-desk">Help Desk</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="copy">
+        Jawaharlal Nehru Technological University Hyderabad — Campus Explorer ©
+        2026
+      </div>
+    </footer>
+
+    <!-- Building Details Modal -->
+    <div
+      class="modal-overlay"
+      id="buildingModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal" id="modalClose">
+          ×
+        </button>
+        <h3 id="modalTitle">Building Name</h3>
+        <div class="detail-row">
+          <span class="detail-label">Department:</span>
+          <span class="detail-value">Computer Science &amp; Engineering</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">HOD:</span>
+          <span class="detail-value">Dr. Anitha Rao</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Faculty:</span>
+          <span class="detail-value">42 members</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Contact:</span>
+          <span class="detail-value">cse@jntuh.ac.in</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Services:</span>
+          <span class="detail-value">Wi-Fi, Lab Access, Library</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Hours:</span>
+          <span class="detail-value">8:00 AM – 6:00 PM</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Accessibility:</span>
+          <span class="detail-value">✅ Wheelchair accessible</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Floating Settings -->
+    <button
+      class="settings-fab"
+      id="settingsFab"
+      type="button"
+      aria-label="Open settings"
+      aria-expanded="false"
+      aria-controls="settingsOverlay"
+    >
+      <svg class="fab-icon icon-gear" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 13a7.97 7.97 0 0 0 0-2l2.1-1.6-2-3.4-2.5 1a8 8 0 0 0-1.7-1L14.9 3h-4l-.4 2.9a8 8 0 0 0-1.7 1l-2.5-1-2 3.4L6.4 11a8 8 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-1a8 8 0 0 0 1.7 1L9.1 21h4l.4-2.9a8 8 0 0 0 1.7-1l2.5 1 2-3.4L19.4 13z"></path>
+      </svg>
+      <svg class="fab-icon icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    </button>
+
+    <div class="settings-overlay" id="settingsOverlay" aria-hidden="true">
+      <div class="settings-overlay-inner">
+        <span class="settings-kicker">Guest Settings</span>
+        <h1 id="settingsHeading">Settings</h1>
+        <p class="settings-hint">Tap the gear again to close.</p>
+
+        <div class="settings-panel" role="group" aria-labelledby="settingsHeading">
+          <div class="settings-row">
+            <div class="settings-row-text">
+              <span class="settings-row-label">ADHD-friendly UI</span>
+              <span class="settings-row-desc"
+                >Calmer motion, clearer spacing and fewer visual distractions.</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="adhdToggle" />
+              <span class="switch-track" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="settings-row">
+            <div class="settings-row-text">
+              <span class="settings-row-label">Floating assistant</span>
+              <span class="settings-row-desc"
+                >A quick-help bubble that follows you around the site.</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="assistantToggle" />
+              <span class="switch-track" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="settings-row">
+            <div class="settings-row-text">
+              <span class="settings-row-label">Text size</span>
+              <span class="settings-row-desc">Adjust reading size across the site.</span>
+            </div>
+            <div class="segmented" role="radiogroup" aria-label="Text size">
+              <button type="button" class="segmented-btn" data-text-size="small">
+                Small
+              </button>
+              <button type="button" class="segmented-btn" data-text-size="mid">Mid</button>
+              <button type="button" class="segmented-btn" data-text-size="large">
+                Large
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div class="settings-row-text">
+              <span class="settings-row-label">Appearance</span>
+              <span class="settings-row-desc">Switch between light and dark themes.</span>
+            </div>
+            <div class="segmented" role="radiogroup" aria-label="Appearance">
+              <button type="button" class="segmented-btn" data-theme-choice="light">
+                Light
+              </button>
+              <button type="button" class="segmented-btn" data-theme-choice="dark">
+                Dark
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating assistant -->
+    <div class="floating-assistant" id="floatingAssistant" aria-hidden="true">
+      <div class="assistant-popover" id="assistantPopover" role="dialog" aria-label="Campus assistant">
+        <strong>Hi, I'm your campus guide.</strong> Ask me about buildings,
+        timings, or the fastest way to your next class.
+      </div>
+      <button
+        class="assistant-fab"
+        id="assistantFab"
+        type="button"
+        aria-label="Open campus assistant"
+        aria-expanded="false"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M21 12c0 4.4-4 8-9 8-1.1 0-2.15-.16-3.1-.46L3 21l1.6-4.3A7.7 7.7 0 0 1 3 12c0-4.4 4-8 9-8s9 3.6 9 8Z" />
+        </svg>
+      </button>
+    </div>
+
+    <script src="js/jntuh.js"></script>
+  </body>
+</html>

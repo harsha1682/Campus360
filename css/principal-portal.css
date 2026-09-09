@@ -1,0 +1,71 @@
+:root{--cocoa:#442D1C;--wine:#743014;--caramel:#84592B;--olive:#9D9167;--batter:#E8D1A7;--cream:#F4ECDA;--line:rgba(232,209,167,0.25);--success:#2d7a4f;--warning:#b8860b;--danger:#8b0000}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Raleway',sans-serif;background:var(--cream);color:var(--cocoa);line-height:1.6}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:var(--cocoa)}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:'Raleway',sans-serif}
+.admin-header{background:linear-gradient(165deg,var(--cocoa),#3a2517);color:var(--batter);padding:20px 48px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.admin-brand{display:flex;align-items:center;gap:14px}
+.admin-glyph{width:40px;height:40px;border:2px solid var(--batter);border-radius:50%;position:relative}
+.admin-brand .title{font-family:'Playfair Display',serif;font-size:18px;letter-spacing:0.08em}
+.admin-brand .subtitle{font-size:11px;letter-spacing:0.12em;color:var(--olive)}
+.admin-user{display:flex;align-items:center;gap:16px}
+.admin-user .avatar{width:44px;height:44px;background:var(--batter);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.admin-user .info .name{font-size:14px;font-weight:600}
+.admin-user .info .role{font-size:11px;color:var(--olive)}
+.admin-badge{padding:6px 14px;background:rgba(232,209,167,0.2);border:1px solid var(--caramel);border-radius:4px;font-size:11px;font-weight:600}
+.admin-main{max-width:1400px;margin:0 auto;padding:40px 48px}
+.admin-header-section{margin-bottom:32px}
+.admin-header-section h1{font-size:32px;margin-bottom:8px}
+.admin-header-section p{font-size:14px;color:var(--caramel)}
+.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:32px}
+.overview-card{background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:28px;position:relative;overflow:hidden}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--caramel),var(--wine))}
+.overview-card .label{font-size:12px;color:var(--caramel);letter-spacing:0.02em;margin-bottom:10px}
+.overview-card .value{font-family:'Playfair Display',serif;font-size:36px;color:var(--wine);font-weight:600}
+.overview-card .trend{font-size:12px;margin-top:10px;display:flex;align-items:center;gap:6px}
+.overview-card .trend.up{color:var(--success)}
+.overview-card .trend.down{color:var(--danger)}
+.dashboard-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-bottom:32px}
+.dashboard-card{background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:32px}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.card-header h3{font-size:20px}
+.chart-placeholder{background:var(--batter);border-radius:4px;padding:40px;text-align:center;color:var(--caramel);font-size:14px}
+.user-table{width:100%;border-collapse:collapse}
+.user-table th{text-align:left;padding:14px 16px;font-size:12px;color:var(--caramel);font-weight:600;border-bottom:1px solid var(--line)}
+.user-table td{padding:14px 16px;border-bottom:1px solid var(--line)}
+.user-info{display:flex;align-items:center;gap:12px}
+.user-avatar{width:36px;height:36px;background:var(--batter);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.user-details .name{font-size:14px;font-weight:600}
+.user-details .email{font-size:11px;color:var(--caramel)}
+.user-role{padding:4px 10px;border-radius:4px;font-size:11px;font-weight:600}
+.user-role.student{background:rgba(45,122,79,0.15);color:var(--success)}
+.user-role.teacher{background:rgba(132,89,43,0.15);color:var(--caramel)}
+.user-role.admin{background:rgba(116,48,20,0.15);color:var(--wine)}
+.user-actions{display:flex;gap:8px}
+.action-btn{padding:6px 12px;border:1px solid var(--caramel);border-radius:4px;font-size:11px;cursor:pointer}
+.action-btn.delete{border-color:var(--danger);color:var(--danger)}
+.action-btn.delete:hover{background:rgba(139,0,0,0.1)}
+.moderation-item{padding:20px;background:var(--batter);border-radius:4px;margin-bottom:16px;border-left:4px solid var(--wine)}
+.moderation-item .meta{font-size:11px;color:var(--caramel);margin-bottom:8px}
+.moderation-item .content{font-size:14px;margin-bottom:12px;line-height:1.6}
+.moderation-actions{display:flex;gap:12px}
+.mod-btn{padding:8px 16px;border-radius:4px;font-size:12px;font-weight:600;cursor:pointer}
+.mod-btn.approve{background:var(--success);color:white}
+.mod-btn.reject{background:var(--danger);color:white}
+.notification-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}
+.form-group select,.form-group input,.form-group textarea{width:100%;padding:12px;border:1px solid var(--caramel);border-radius:4px;background:var(--cream);font-size:14px}
+.form-group textarea{min-height:120px;resize:vertical;grid-column:1/-1}
+.btn-send{padding:14px 32px;background:var(--wine);color:var(--batter);border:none;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;grid-column:1/-1}
+.btn-send:hover{background:#5a2510}
+.activity-list{display:flex;flex-direction:column;gap:12px}
+.activity-item{display:flex;gap:12px;padding:12px;background:var(--batter);border-radius:4px;font-size:13px}
+.activity-item .icon{font-size:18px}
+.activity-item .text{flex:1}
+.activity-item .time{font-size:11px;color:var(--caramel)}
+.security-notice{background:rgba(139,0,0,0.1);border:1px solid var(--danger);border-radius:4px;padding:16px;margin-bottom:24px;font-size:12px;color:var(--danger);display:flex;align-items:center;gap:12px}
+.security-notice .icon{font-size:20px}
+.admin-footer{text-align:center;padding:24px;color:var(--caramel);font-size:12px;border-top:1px solid var(--line);margin-top:40px}
+@media(max-width:1024px){.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.admin-header{padding:16px 24px;flex-wrap:wrap;gap:16px}.admin-main{padding:24px}.notification-form{grid-template-columns:1fr}}

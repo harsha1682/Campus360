@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Campus360 | Student Portal</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/student-portal.css" />
+</head>
+
+<body>
+  <div class="shell">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside>
+      <div class="brand">
+        <span class="mark">C</span>
+        <b>CAMPUS360</b>
+      </div>
+
+      <div class="student">
+        <span class="avatar">KC</span>
+        <div>
+          <strong>Keerthana Chillara</strong>
+          <small>21241A05XX &middot; CSE</small>
+        </div>
+      </div>
+
+      <p class="nav-label">Student portal</p>
+      <nav class="nav">
+        <button class="active" data-view="dashboard"><span class="ico">&#8962;</span>Dashboard</button>
+        <button data-view="timetable"><span class="ico">&#9707;</span>Timetable</button>
+        <button data-view="attendance"><span class="ico">&#9684;</span>Attendance</button>
+        <button data-view="calendar"><span class="ico">&#9633;</span>Calendar</button>
+        <button data-view="results"><span class="ico">&#9670;</span>Results</button>
+        <button data-view="syllabus"><span class="ico">&#9636;</span>Syllabus</button>
+        <button data-view="clubs"><span class="ico">&#10022;</span>Clubs</button>
+        <button data-view="support"><span class="ico">?</span>Help &amp; Feedback</button>
+        <button data-view="safety"><span class="ico">!</span>Anti-Ragging</button>
+      </nav>
+
+      <div class="side-foot">
+        <p>Semester 5 &middot; 2026&ndash;27</p>
+        <button class="logout" data-message="Logout is a server-side action.">Log out</button>
+      </div>
+    </aside>
+
+    <main>
+      <!-- ================= TOPBAR ================= -->
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="eyebrow">Student portal &middot; Tuesday, 8 September</p>
+          <h1 id="heading">A good day starts with<br>the next small thing.</h1>
+          <p class="lede" id="description">Your campus dashboard keeps classes, progress, support and the notices that shape your day in one calm place.</p>
+        </div>
+
+        <div class="actions">
+          <span class="chip">Sem 5 &middot; 2026&ndash;27</span>
+
+          <button class="bell" id="bell" aria-label="Open notifications" aria-expanded="false">
+            &#9831;<span class="count" id="count">3</span>
+          </button>
+
+          <div class="popover" id="notifications" hidden>
+            <div class="pop-head">
+              <strong>Notifications</strong>
+              <button class="text-btn" id="markRead">Mark all read</button>
+            </div>
+            <div class="pop-item">
+              <b>DBMS assignment due tomorrow</b>
+              <span>Posted 35 minutes ago</span>
+            </div>
+            <div class="pop-item">
+              <b>CodeCraft meeting moved to 4:30 PM</b>
+              <span>Posted 2 hours ago</span>
+            </div>
+            <div class="pop-item">
+              <b>Mid-semester timetable published</b>
+              <span>Posted yesterday</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= DASHBOARD ================= -->
+      <section class="view active" data-page="dashboard">
+        <div class="metrics">
+          <article class="metric">
+            <div class="metric-label">Attendance</div>
+            <div class="metric-value">78%</div>
+            <p>2% ahead of last week</p>
+          </article>
+          <article class="metric">
+            <div class="metric-label">Classes today</div>
+            <div class="metric-value">5</div>
+            <p>Next: DBMS &middot; 10:00 AM</p>
+          </article>
+          <article class="metric">
+            <div class="metric-label">Open tickets</div>
+            <div class="metric-value">1</div>
+            <p>Lab PC issue is in progress</p>
+          </article>
+          <article class="metric teal">
+            <div class="metric-label">Exam countdown</div>
+            <div class="metric-value">24</div>
+            <p>days to mid-semester exams</p>
+          </article>
+        </div>
+
+        <div class="dashboard">
+          <div class="stack">
+            <article class="card pad">
+              <div class="section-head">
+                <div>
+                  <h2>Today&rsquo;s route</h2>
+                  <p>Tuesday &middot; 8 September</p>
+                </div>
+                <span class="badge">&#9679; On track</span>
+              </div>
+
+              <div class="schedule-row">
+                <time>09:00</time>
+                <div>
+                  <div class="subject">Operating Systems</div>
+                  <div class="meta">Dr. Kumar</div>
+                </div>
+                <span class="room">Room 205</span>
+              </div>
+              <div class="schedule-row">
+                <time>10:00</time>
+                <div>
+                  <div class="subject">Database Management</div>
+                  <div class="meta">Dr. Reddy</div>
+                </div>
+                <span class="room">Room 205</span>
+              </div>
+              <div class="schedule-row">
+                <time>12:00</time>
+                <div>
+                  <div class="subject">Lunch break</div>
+                  <div class="meta">CSE Block canteen</div>
+                </div>
+                <span class="room">1 hour</span>
+              </div>
+              <div class="schedule-row">
+                <time>13:00</time>
+                <div>
+                  <div class="subject">Computer Networks</div>
+                  <div class="meta">Dr. Sharma</div>
+                </div>
+                <span class="room">Room 301</span>
+              </div>
+              <div class="schedule-row">
+                <time>15:30</time>
+                <div>
+                  <div class="subject">CodeCraft club meeting</div>
+                  <div class="meta">Project showcase prep</div>
+                </div>
+                <span class="room">Lab 2</span>
+              </div>
+
+              <div class="prompt">
+                <strong>One thing at a time.</strong>
+                <p>Your DBMS assignment is due tomorrow. Review the normalization examples after today&rsquo;s class.</p>
+              </div>
+            </article>
+
+            <article class="card pad">
+              <div class="section-head">
+                <div>
+                  <h2>Attendance snapshot</h2>
+                  <p>Keep every subject above the 75% requirement.</p>
+                </div>
+                <button class="mini" data-go="attendance">View details</button>
+              </div>
+
+              <div class="progress-list">
+                <div>
+                  <div class="progress-label"><span>Data Structures</span><span>82%</span></div>
+                  <div class="progress"><i style="width:82%"></i></div>
+                </div>
+                <div>
+                  <div class="progress-label"><span>Database Management</span><span>72%</span></div>
+                  <div class="progress amber"><i style="width:72%"></i></div>
+                </div>
+                <div>
+                  <div class="progress-label"><span>Computer Networks</span><span>68%</span></div>
+                  <div class="progress red"><i style="width:68%"></i></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="stack">
+            <article class="card pad">
+              <div class="section-head">
+                <div>
+                  <h3>Notifications</h3>
+                  <p>Three updates need your attention.</p>
+                </div>
+                <button class="mini" id="openNotifications">Open</button>
+              </div>
+
+              <div class="notice">
+                <span class="dot teal"></span>
+                <div>
+                  <b>DBMS assignment due tomorrow</b>
+                  <p>Review the upload requirements.</p>
+                </div>
+              </div>
+              <div class="notice">
+                <span class="dot"></span>
+                <div>
+                  <b>Club meeting rescheduled</b>
+                  <p>CodeCraft now meets at 4:30 PM.</p>
+                </div>
+              </div>
+              <div class="notice">
+                <span class="dot"></span>
+                <div>
+                  <b>Mid-sem timetable is live</b>
+                  <p>Check the calendar for dates.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="card pad">
+              <div class="section-head">
+                <div>
+                  <h3>Need a hand?</h3>
+                  <p>Raise a ticket or leave quick feedback.</p>
+                </div>
+              </div>
+              <p class="note">Academic, technical and campus queries all begin in one place.</p>
+              <p><button class="primary" data-go="support">Open Help &amp; Feedback</button></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TIMETABLE ================= -->
+      <section class="view" data-page="timetable">
+        <div class="hero">
+          <div>
+            <h2 class="title">Make room for the week.</h2>
+            <p class="note">A simple weekly view keeps classrooms, labs and breaks easy to scan.</p>
+          </div>
+          <button class="mini" data-message="The timetable download will be connected when the portal has a backend.">Download PDF</button>
+        </div>
+
+        <article class="card pad">
+          <div class="scroll">
+            <div class="timetable">
+              <div class="time-head">Time</div>
+              <div class="day-head">Mon</div>
+              <div class="day-head">Tue</div>
+              <div class="day-head">Wed</div>
+              <div class="day-head">Thu</div>
+              <div class="day-head">Fri</div>
+
+              <div class="time-cell">09&ndash;10</div>
+              <div class="class"><b>Data Structures</b><span>Room 301 &middot; Dr. Rao</span></div>
+              <div class="class now"><b>Operating Systems</b><span>Room 205 &middot; Dr. Kumar</span></div>
+              <div class="class"><b>Computer Networks</b><span>Room 301 &middot; Dr. Sharma</span></div>
+              <div class="class"><b>DBMS</b><span>Room 205 &middot; Dr. Reddy</span></div>
+              <div class="class"><b>Maths III</b><span>Room 101 &middot; Dr. Patel</span></div>
+
+              <div class="time-cell">10&ndash;11</div>
+              <div class="class"><b>DS Lab</b><span>Lab 1 &middot; Mr. Verma</span></div>
+              <div class="class now"><b>DBMS</b><span>Room 205 &middot; Dr. Reddy</span></div>
+              <div class="class"><b>OS Lab</b><span>Lab 3 &middot; Mr. Singh</span></div>
+              <div class="class"></div>
+              <div class="class"><b>CN Lab</b><span>Lab 2 &middot; Ms. Iyer</span></div>
+
+              <div class="time-cell">11&ndash;12</div>
+              <div class="class"></div>
+              <div class="class now"><b>Maths III</b><span>Room 101 &middot; Dr. Patel</span></div>
+              <div class="class"></div>
+              <div class="class"><b>Data Structures</b><span>Room 301 &middot; Dr. Rao</span></div>
+              <div class="class"></div>
+
+              <div class="time-cell">12&ndash;13</div>
+              <div class="class lunch">Lunch</div>
+              <div class="class lunch">Lunch</div>
+              <div class="class lunch">Lunch</div>
+              <div class="class lunch">Lunch</div>
+              <div class="class lunch">Lunch</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================= ATTENDANCE ================= -->
+      <section class="view" data-page="attendance">
+        <div class="hero">
+          <div>
+            <h2 class="title">Keep your week in balance.</h2>
+            <p class="note">Attendance refreshes after faculty marks the register. Minimum requirement: 75%.</p>
+          </div>
+          <span class="badge">&#9679; Overall 78%</span>
+        </div>
+
+        <article class="card pad">
+          <div class="scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Progress</th>
+                  <th>Attendance</th>
+                  <th>Status</th>
+                  <th>Guidance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="subject-cell"><b>Data Structures</b><small>CS501</small></td>
+                  <td><div class="inline-progress progress"><i style="width:82%"></i></div></td>
+                  <td>82% &middot; 23 / 28</td>
+                  <td><span class="badge">Safe</span></td>
+                  <td>Maintain your current run.</td>
+                </tr>
+                <tr>
+                  <td class="subject-cell"><b>Database Management</b><small>CS502</small></td>
+                  <td><div class="inline-progress progress amber"><i style="width:72%"></i></div></td>
+                  <td>72% &middot; 18 / 25</td>
+                  <td><span class="badge amber">Watch</span></td>
+                  <td>Attend the next 3 classes.</td>
+                </tr>
+                <tr>
+                  <td class="subject-cell"><b>Operating Systems</b><small>CS503</small></td>
+                  <td><div class="inline-progress progress"><i style="width:88%"></i></div></td>
+                  <td>88% &middot; 22 / 25</td>
+                  <td><span class="badge">Safe</span></td>
+                  <td>Comfortably above target.</td>
+                </tr>
+                <tr>
+                  <td class="subject-cell"><b>Computer Networks</b><small>CS504</small></td>
+                  <td><div class="inline-progress progress red"><i style="width:68%"></i></div></td>
+                  <td>68% &middot; 17 / 25</td>
+                  <td><span class="badge red">Action needed</span></td>
+                  <td>Attend the next 7 classes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================= CALENDAR ================= -->
+      <section class="view" data-page="calendar">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">September 2026</p>
+            <h2 class="title">Calendar</h2>
+            <p class="note">Academic dates, events and assessment reminders at a glance.</p>
+          </div>
+          <button class="mini" data-message="Month switching can be connected to your academic calendar data.">Next month &rarr;</button>
+        </div>
+
+        <article class="card pad">
+          <div class="scroll">
+            <div class="calendar">
+              <div class="weekday">Sun</div>
+              <div class="weekday">Mon</div>
+              <div class="weekday">Tue</div>
+              <div class="weekday">Wed</div>
+              <div class="weekday">Thu</div>
+              <div class="weekday">Fri</div>
+              <div class="weekday">Sat</div>
+
+              <div class="day muted"><span class="number">30</span></div>
+              <div class="day muted"><span class="number">31</span></div>
+              <div class="day"><span class="number">1</span><div class="event teal">Classes resume</div></div>
+              <div class="day"><span class="number">2</span></div>
+              <div class="day"><span class="number">3</span></div>
+              <div class="day"><span class="number">4</span></div>
+              <div class="day"><span class="number">5</span></div>
+
+              <div class="day"><span class="number">6</span></div>
+              <div class="day"><span class="number">7</span></div>
+              <div class="day today"><span class="number">8</span><div class="event teal">DBMS tutorial</div></div>
+              <div class="day"><span class="number">9</span></div>
+              <div class="day"><span class="number">10</span></div>
+              <div class="day"><span class="number">11</span></div>
+              <div class="day"><span class="number">12</span></div>
+
+              <div class="day"><span class="number">13</span></div>
+              <div class="day"><span class="number">14</span><div class="event">Srishti fest</div></div>
+              <div class="day"><span class="number">15</span><div class="event">Srishti fest</div></div>
+              <div class="day"><span class="number">16</span><div class="event">Srishti fest</div></div>
+              <div class="day"><span class="number">17</span></div>
+              <div class="day"><span class="number">18</span></div>
+              <div class="day"><span class="number">19</span></div>
+
+              <div class="day"><span class="number">20</span></div>
+              <div class="day"><span class="number">21</span></div>
+              <div class="day"><span class="number">22</span></div>
+              <div class="day"><span class="number">23</span></div>
+              <div class="day"><span class="number">24</span></div>
+              <div class="day"><span class="number">25</span><div class="event teal">Mid-sems start</div></div>
+              <div class="day"><span class="number">26</span></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================= RESULTS ================= -->
+      <section class="view" data-page="results">
+        <div class="hero">
+          <div>
+            <h2 class="title">Marks, then the next move.</h2>
+            <p class="note">Your scores should make the next study choice clearer, not noisier.</p>
+          </div>
+          <button class="mini" data-message="The official grade card download will be available once connected to results data.">Download grade card</button>
+        </div>
+
+        <div class="two">
+          <article class="card pad">
+            <div class="section-head">
+              <div>
+                <h2>Current marks</h2>
+                <p>Internal assessment &middot; Semester 5</p>
+              </div>
+              <span class="badge">Updated today</span>
+            </div>
+
+            <div class="progress-list">
+              <div>
+                <div class="progress-label"><span>Data Structures</span><span>36 / 40</span></div>
+                <div class="progress"><i style="width:90%"></i></div>
+              </div>
+              <div>
+                <div class="progress-label"><span>Operating Systems</span><span>34 / 40</span></div>
+                <div class="progress amber"><i style="width:85%"></i></div>
+              </div>
+              <div>
+                <div class="progress-label"><span>Computer Networks</span><span>31 / 40</span></div>
+                <div class="progress"><i style="width:77.5%"></i></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="result">
+            <p class="eyebrow">Next assessment</p>
+            <strong>24</strong>
+            <span>days until the first mid-semester paper</span>
+            <p style="margin-top:27px;font-family:Georgia,serif;font-size:1.15rem">15 July 2025</p>
+            <p style="font-size:.72rem;color:#dbeae4">Computer Networks &middot; 10:00 AM<br>Exam Hall B</p>
+            <button class="secondary" style="border-color:#d6e5df;color:#fff" data-go="syllabus">Review syllabus</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= SYLLABUS ================= -->
+      <section class="view" data-page="syllabus">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">CS502 &middot; Semester 5</p>
+            <h2 class="title">Syllabus, without the scramble.</h2>
+            <p class="note">A lightweight module view for the current course.</p>
+          </div>
+          <select aria-label="Choose a subject" style="width:auto">
+            <option>Database Management</option>
+            <option>Data Structures</option>
+            <option>Operating Systems</option>
+          </select>
+        </div>
+
+        <article class="card pad">
+          <div class="section-head">
+            <div>
+              <h2>Database Management</h2>
+              <p>Five teaching units &middot; 40 internal marks</p>
+            </div>
+            <span class="badge">3 of 5 covered</span>
+          </div>
+
+          <div class="syllabus-list">
+            <details class="syllabus" open>
+              <summary>
+                <span class="unit">1</span>
+                <span><strong>Database concepts &amp; architecture</strong><small>Covered &middot; Weeks 1&ndash;2</small></span>
+                <span>+</span>
+              </summary>
+              <div class="syllabus-body">
+                Database systems, data models, schema vs. instance, three-level architecture and data independence.<br>
+                <button class="resource" data-message="Add your Unit 1 notes link here.">Notes</button>
+                <button class="resource" data-message="Add your Unit 1 practice link here.">Practice set</button>
+              </div>
+            </details>
+
+            <details class="syllabus">
+              <summary>
+                <span class="unit">2</span>
+                <span><strong>ER modelling &amp; relational design</strong><small>Covered &middot; Weeks 3&ndash;4</small></span>
+                <span>+</span>
+              </summary>
+              <div class="syllabus-body">
+                Entity sets, relationships, constraints, ER-to-relational mapping and relational algebra.
+              </div>
+            </details>
+
+            <details class="syllabus">
+              <summary>
+                <span class="unit">3</span>
+                <span><strong>SQL &amp; query processing</strong><small>In progress &middot; Weeks 5&ndash;7</small></span>
+                <span>+</span>
+              </summary>
+              <div class="syllabus-body">
+                SQL DDL and DML, nested queries, views, aggregate functions and query optimisation basics.
+              </div>
+            </details>
+
+            <details class="syllabus">
+              <summary>
+                <span class="unit">4</span>
+                <span><strong>Normalization &amp; transactions</strong><small>Upcoming &middot; Weeks 8&ndash;10</small></span>
+                <span>+</span>
+              </summary>
+              <div class="syllabus-body">
+                Functional dependencies, normal forms, ACID properties, concurrency control and recovery.
+              </div>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================= CLUBS ================= -->
+      <section class="view" data-page="clubs">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Your communities</p>
+            <h2 class="title">Find your people, make things.</h2>
+            <p class="note">Your memberships live here. Settings stay one step deeper so the main navigation remains clean.</p>
+          </div>
+          <button class="primary" data-go="club-settings">Manage my clubs</button>
+        </div>
+
+        <div class="clubs">
+          <article class="club card">
+            <p class="club-kind">Technology &middot; member</p>
+            <h3>CodeCraft</h3>
+            <p>Build practical projects, share code reviews and prepare for the annual hackathon.</p>
+            <footer>
+              <span>Next: Tue &middot; 4:30 PM</span>
+              <button class="mini" data-go="club-settings">Club settings</button>
+            </footer>
+          </article>
+
+          <article class="club card">
+            <p class="club-kind">Culture &middot; volunteer</p>
+            <h3>Srishti</h3>
+            <p>Help create the campus cultural festival through design, events and on-stage production.</p>
+            <footer>
+              <span>Next: Thu &middot; 5:00 PM</span>
+              <button class="mini" data-go="club-settings">Club settings</button>
+            </footer>
+          </article>
+
+          <article class="club card">
+            <p class="club-kind">Community &middot; member</p>
+            <h3>Green Campus</h3>
+            <p>Join weekend clean-ups, conservation drives and small sustainability projects.</p>
+            <footer>
+              <span>Next: Sat &middot; 8:00 AM</span>
+              <button class="mini" data-go="club-settings">Club settings</button>
+            </footer>
+          </article>
+
+          <article class="club card">
+            <p class="club-kind">Explore more</p>
+            <h3>Discover clubs</h3>
+            <p>Browse available student communities once your club directory is connected.</p>
+            <footer>
+              <span>12 clubs available</span>
+              <button class="mini" data-message="Connect this button to your club directory.">Browse</button>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= CLUB SETTINGS ================= -->
+      <section class="view" data-page="club-settings">
+        <div class="settings">
+          <div>
+            <h2>Club settings</h2>
+            <p>Manage selected clubs without placing this utility page in the sidebar.</p>
+          </div>
+          <button class="secondary" data-go="clubs">&larr; Back to clubs</button>
+        </div>
+
+        <div class="two">
+          <article class="card pad">
+            <div class="section-head">
+              <div>
+                <h2>My memberships</h2>
+                <p>Change communication preferences for each club.</p>
+              </div>
+            </div>
+
+            <div class="ticket">
+              <div><b>CodeCraft</b><span>Technology &middot; Member since Aug 2025</span></div>
+              <button class="mini" data-message="CodeCraft notification preferences opened.">Preferences</button>
+            </div>
+            <div class="ticket">
+              <div><b>Srishti</b><span>Culture &middot; Volunteer since Jul 2025</span></div>
+              <button class="mini" data-message="Srishti notification preferences opened.">Preferences</button>
+            </div>
+            <div class="ticket">
+              <div><b>Green Campus</b><span>Community &middot; Member since Sep 2025</span></div>
+              <button class="mini" data-message="Green Campus notification preferences opened.">Preferences</button>
+            </div>
+          </article>
+
+          <article class="card pad">
+            <div class="section-head">
+              <div>
+                <h2>Club notifications</h2>
+                <p>Choose what arrives in your portal inbox.</p>
+              </div>
+            </div>
+
+            <form id="clubForm">
+              <label><span><input type="checkbox" checked> Meeting changes and cancellations</span></label>
+              <label><span><input type="checkbox" checked> Event registration reminders</span></label>
+              <label><span><input type="checkbox"> Weekly activity round-up</span></label>
+              <button class="primary">Save preferences</button>
+              <p class="form-status" id="clubStatus"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= SUPPORT ================= -->
+      <section class="view" data-page="support">
+        <div class="hero">
+          <div>
+            <h2 class="title">A ticket is better than a dead end.</h2>
+            <p class="note">Ask for help and share feedback side by side. Both are clear and easy to follow up.</p>
+          </div>
+        </div>
+
+        <div class="two">
+          <article class="card pad">
+            <div class="section-head">
+              <div>
+                <h2>Raise a help desk ticket</h2>
+                <p>For academic, IT, maintenance or administrative issues.</p>
+              </div>
+            </div>
+
+            <form id="ticketForm">
+              <div class="form-grid">
+                <label>Category
+                  <select required>
+                    <option value="">Choose a category</option>
+                    <option>IT / Lab issue</option>
+                    <option>Academic</option>
+                    <option>Maintenance</option>
+                    <option>Administrative</option>
+                  </select>
+                </label>
+                <label>Priority
+                  <select required>
+                    <option>Normal</option>
+                    <option>High</option>
+                    <option>Urgent</option>
+                  </select>
+                </label>
+              </div>
+              <label>What happened?
+                <textarea required placeholder="Describe the issue, location and any useful detail."></textarea>
+              </label>
+              <button class="primary">Submit ticket</button>
+              <p class="form-status" id="ticketStatus"></p>
+            </form>
+
+            <div class="ticket">
+              <div><b>Lab PC not working &mdash; System 12</b><span>IT / Lab issue &middot; Submitted 5 Sep</span></div>
+              <span class="badge amber">In progress</span>
+            </div>
+            <div class="ticket">
+              <div><b>Wi-Fi in CSE Block</b><span>IT / Lab issue &middot; Submitted 2 Sep</span></div>
+              <span class="badge">Resolved</span>
+            </div>
+          </article>
+
+          <article class="card pad">
+            <div class="section-head">
+              <div>
+                <h2>Share feedback</h2>
+                <p>Suggestions go to the student experience team.</p>
+              </div>
+            </div>
+
+            <form id="feedbackForm">
+              <label>Feedback type
+                <select required>
+                  <option value="">Choose a topic</option>
+                  <option>Portal experience</option>
+                  <option>Academics</option>
+                  <option>Campus facilities</option>
+                  <option>Clubs &amp; events</option>
+                </select>
+              </label>
+              <label>Your feedback
+                <textarea required placeholder="What is working well, or what should improve?"></textarea>
+              </label>
+              <label><span><input type="checkbox"> Send anonymously</span></label>
+              <button class="primary">Send feedback</button>
+              <p class="form-status" id="feedbackStatus"></p>
+            </form>
+
+            <div class="prompt">
+              <strong>Feedback is not a ticket.</strong>
+              <p>Use the ticket form for a problem that needs a response. Use feedback to help the campus improve over time.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= SAFETY / ANTI-RAGGING ================= -->
+      <section class="view" data-page="safety">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Student safety</p>
+            <h2 class="title">Safety comes first.</h2>
+            <p class="note">A discreet starting point for anti-ragging support and a clear reminder of what to do next.</p>
+          </div>
+        </div>
+
+        <div class="two">
+          <article class="safety">
+            <h2>Anti-ragging support</h2>
+            <p>Ragging is not acceptable. You can report a concern, ask for a private conversation, or use the campus support process.</p>
+            <ul>
+              <li>Your report should be reviewed by the designated campus welfare or anti-ragging team.</li>
+              <li>Share only what you are comfortable sharing in the first message.</li>
+              <li>Save immediate safety contact details from your institution in the connected portal.</li>
+            </ul>
+            <div class="emergency">
+              <b>Immediate danger?</b> Move to a safer public space and contact local emergency services or a trusted campus authority right away. This demo page does not send an emergency alert.
+            </div>
+          </article>
+
+          <article class="card pad">
+            <div class="section-head">
+              <div>
+                <h2>Request support</h2>
+                <p>Private details should be handled by a secure backend in production.</p>
+              </div>
+              <span class="badge red">Confidential</span>
+            </div>
+
+            <form id="safetyForm">
+              <label>Preferred contact method
+                <select required>
+                  <option value="">Choose a method</option>
+                  <option>Portal inbox</option>
+                  <option>Email</option>
+                  <option>Phone call</option>
+                  <option>In-person appointment</option>
+                </select>
+              </label>
+              <label>How can the support team help?
+                <textarea required placeholder="Share as much or as little as feels safe. Do not include passwords or sensitive IDs."></textarea>
+              </label>
+              <button class="primary">Request support</button>
+              <p class="form-status" id="safetyStatus"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Campus360 student portal &middot; Demo interface &middot; Connect actions and personal data to your authenticated campus backend before production use.
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/student-portal.js"></script>
+</body>
+</html>

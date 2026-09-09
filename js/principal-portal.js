@@ -1,0 +1,5 @@
+document.getElementById('notificationForm').addEventListener('submit',function(e){e.preventDefault();alert('Global notification sent! Recipients will receive this via email and in-app notification.');this.reset();});
+const approveBtns=document.querySelectorAll('.mod-btn.approve'),rejectBtns=document.querySelectorAll('.mod-btn.reject');
+approveBtns.forEach(btn=>{btn.addEventListener('click',function(){const item=this.closest('.moderation-item');item.style.opacity='0.5';item.style.pointerEvents='none';alert('Content approved and published!')})});
+rejectBtns.forEach(btn=>{btn.addEventListener('click',function(){const item=this.closest('.moderation-item');item.style.opacity='0.5';item.style.pointerEvents='none';alert('Content rejected. Submitter has been notified.')})});
+const deleteBtns=document.querySelectorAll('.action-btn.delete');deleteBtns.forEach(btn=>{btn.addEventListener('click',function(){if(confirm('Are you sure you want to remove this user? This action cannot be undone.')){const row=this.closest('tr');row.style.opacity='0.5';row.style.pointerEvents='none';alert('User removed successfully.')}})});
